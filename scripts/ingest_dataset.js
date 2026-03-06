@@ -1,12 +1,17 @@
-import fs from "fs";
+import fs from "fs"
 
-const raw = JSON.parse(fs.readFileSync("./data/sample_dataset.json"));
+const datasetsConfig = JSON.parse(
+  fs.readFileSync("data/datasets.json")
+)
 
-const cleaned = raw.map(d => ({
-  id: d.id,
-  text: d.text.trim()
-}));
+console.log("Datasets configured:")
 
-fs.writeFileSync("./data/clean_dataset.json", JSON.stringify(cleaned, null, 2));
+datasetsConfig.datasets.forEach((dataset) => {
+  console.log("Loading:", dataset)
 
-console.log("Dataset ingested:", cleaned.length);
+  const data = JSON.parse(fs.readFileSync(dataset))
+
+  console.log("Records:", data.length)
+})
+
+console.log("Dataset ingestion complete")
