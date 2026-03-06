@@ -48,3 +48,33 @@ benchmark\_rag.js – test retrieval performance
 
 \- Benchmark read-heavy workloads
 
+## Architecture
+
+
+
+External Dataset
+
+&nbsp;     ↓
+
+ingest\_dataset.js
+
+&nbsp;     ↓
+
+embed\_dataset.js
+
+&nbsp;     ↓
+
+vector\_search.js
+
+&nbsp;     ↓
+
+rag\_pipeline.js
+
+&nbsp;     ↓
+
+api\_server.js / CLI
+
+&nbsp;     ↓
+
+Shelby Storage
+
