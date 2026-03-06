@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Shelby AI Demo</title>
+</head>
+<body>
+
+<h2>Shelby AI Storage Demo</h2>
+
+<input id="q" placeholder="Ask about AI storage">
+<button onclick="ask()">Ask</button>
+
+<pre id="out"></pre>
+
+<script>
+async function ask() {
+  const q = document.getElementById("q").value
+
+  const res = await fetch("http://localhost:3000/query",{
+    method:"POST",
+    headers:{'Content-Type':'application/json'},
+    body:JSON.stringify({query:q})
+  })
+
+  const data = await res.json()
+  document.getElementById("out").textContent = JSON.stringify(data,null,2)
+}
+</script>
+
+</body>
+</html>
