@@ -1,20 +1,18 @@
 import express from "express";
-import { askAI } from "./ai/rag_pipeline.js";
+import { runRAG } from "./ai/rag_pipeline.js";
 
 const app = express();
+app.use(express.json());
 
-app.get("/ask", (req, res) => {
+app.post("/query", async (req,res)=>{
 
-  const query = req.query.q || "AI storage";
+  const query = req.body.query;
 
-  const result = askAI(query);
+  const result = await runRAG(query);
 
   res.json(result);
-
 });
 
-app.listen(3000, () => {
-
-  console.log("AI API running on http://localhost:3000");
-
+app.listen(3000, ()=>{
+  console.log("Shelby AI API running on 3000");
 });
