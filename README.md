@@ -1,18 +1,32 @@
-\# Shelby AI Data Pipeline Prototype
+\# Shelby AI Dataset Retrieval Demo
 
 
 
-\## Overview
+Prototype AI infrastructure project exploring decentralized storage
 
-This repository contains a prototype AI data pipeline that ingests datasets,
-
-generates embeddings, and performs vector search for retrieval-augmented queries.
+for AI dataset retrieval workloads.
 
 
 
-The goal is to evaluate decentralized storage solutions such as Shelby for
+This project simulates how AI agents retrieve datasets stored in a
 
-AI workloads that involve read-heavy dataset access patterns.
+global object storage system like Shelby.
+
+
+
+\## Features
+
+
+
+\- Dataset ingestion pipeline
+
+\- Embedding generation
+
+\- Vector search
+
+\- RAG pipeline
+
+\- AI agent retrieval demo
 
 
 
@@ -20,61 +34,33 @@ AI workloads that involve read-heavy dataset access patterns.
 
 
 
-Dataset ingestion → Embedding → Vector search → RAG pipeline
+Dataset → Embedding → Vector Search → RAG → AI Agent
 
 
 
-\## Scripts
+\## Goal
 
 
 
-ingest\_dataset.js – load datasets  
+Evaluate decentralized storage as a backend for AI workloads
 
-embed\_dataset.js – generate embeddings  
-
-vector\_search.js – retrieve relevant data  
-
-benchmark\_rag.js – test retrieval performance
+that require frequent read access across distributed systems.
 
 
 
-\## Future Work
+Inspired by Shelby Protocol architecture.
 
 
 
-\- Integrate Shelby storage layer
-
-\- Test distributed dataset access
-
-\- Benchmark read-heavy workloads
-
-## Architecture
+\## Roadmap
 
 
 
-External Dataset
+\- API server for AI retrieval
 
-&nbsp;     ↓
+\- Shelby storage integration
 
-ingest\_dataset.js
+\- RAG benchmarking
 
-&nbsp;     ↓
-
-embed\_dataset.js
-
-&nbsp;     ↓
-
-vector\_search.js
-
-&nbsp;     ↓
-
-rag\_pipeline.js
-
-&nbsp;     ↓
-
-api\_server.js / CLI
-
-&nbsp;     ↓
-
-Shelby Storage
+\- Multi dataset support
 
