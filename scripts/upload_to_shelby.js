@@ -1,9 +1,16 @@
-import fs from "fs";
+import fs from "fs"
 
-const data = fs.readFileSync("./data/embedded_dataset.json");
+const dataset = JSON.parse(
+  fs.readFileSync("data/embedded_dataset.json","utf8")
+)
 
-console.log("Uploading dataset to Shelby storage...");
+console.log("Preparing dataset upload to Shelby")
 
-setTimeout(() => {
-  console.log("Upload complete (mock)");
-}, 1000);
+console.log("Objects:", dataset.length)
+
+dataset.forEach(d=>{
+  console.log("Uploading object:", d.id)
+})
+
+console.log("\nUpload simulation complete.")
+console.log("Shelby global namespace ready for AI workloads.")
