@@ -1,8 +1,7 @@
-import { search } from "../ai/vector_search.js";
+import { askAI } from "../ai/rag_pipeline.js";
 
 const query = process.argv[2] || "AI storage";
 
-const results = search(query);
+const result = askAI(query);
 
-console.log("Query:", query);
-console.log(results);
+console.log(JSON.stringify(result, null, 2));
