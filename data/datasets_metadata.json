@@ -1,0 +1,18 @@
+{
+  "datasets": [
+    {
+      "name": "ai_research",
+      "description": "AI and machine learning related datasets",
+      "tags": ["ai", "ml", "models"],
+      "storage": "shelby",
+      "records": 2
+    },
+    {
+      "name": "decentralized_storage",
+      "description": "Datasets about decentralized storage systems",
+      "tags": ["storage", "blockchain"],
+      "storage": "shelby",
+      "records": 2
+    }
+  ]
+}
