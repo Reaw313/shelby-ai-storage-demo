@@ -2,15 +2,15 @@
 
 
 
-Prototype AI infrastructure project exploring decentralized storage
-
-for AI dataset retrieval workloads.
+Prototype AI infrastructure project exploring how decentralized storage systems like \*\*Shelby\*\* could support AI workloads that require frequent dataset retrieval.
 
 
 
-This project simulates how AI agents retrieve datasets stored in a
+This project simulates how AI agents access shared datasets stored in a global object storage layer and use them inside a Retrieval-Augmented Generation (RAG) pipeline.
 
-global object storage system like Shelby.
+
+
+---
 
 
 
@@ -18,15 +18,21 @@ global object storage system like Shelby.
 
 
 
-\- Dataset ingestion pipeline
+\* Dataset ingestion pipeline
 
-\- Embedding generation
+\* Embedding generation
 
-\- Vector search
+\* Vector similarity search
 
-\- RAG pipeline
+\* Retrieval-Augmented Generation (RAG) pipeline
 
-\- AI agent retrieval demo
+\* AI agent dataset retrieval simulation
+
+\* Read-heavy workload benchmark
+
+
+
+---
 
 
 
@@ -34,7 +40,77 @@ global object storage system like Shelby.
 
 
 
-Dataset → Embedding → Vector Search → RAG → AI Agent
+Dataset → Embedding → Vector Index → Retrieval → RAG → AI Agent
+
+
+
+In this prototype, datasets are processed into embeddings and indexed for similarity search.
+
+AI agents query the system, retrieve relevant data, and feed it into a RAG pipeline to generate responses.
+
+
+
+---
+
+
+
+\## Demo Workflow
+
+
+
+\### 1. Upload / Prepare Dataset
+
+
+
+```
+
+node upload.js
+
+```
+
+
+
+\### 2. Start API Server
+
+
+
+```
+
+node api\_server.js
+
+```
+
+
+
+\### 3. Query Dataset
+
+
+
+```
+
+http://localhost:3000/search?q=ai
+
+```
+
+
+
+\### 4. Run AI Read Workload Simulation
+
+
+
+```
+
+node benchmarks/read\_test.js
+
+```
+
+
+
+This simulates AI agents repeatedly retrieving datasets from a shared storage layer.
+
+
+
+---
 
 
 
@@ -42,13 +118,25 @@ Dataset → Embedding → Vector Search → RAG → AI Agent
 
 
 
-Evaluate decentralized storage as a backend for AI workloads
-
-that require frequent read access across distributed systems.
+The goal of this project is to explore how a decentralized storage architecture like \*\*Shelby\*\* could support AI systems that rely on:
 
 
 
-Inspired by Shelby Protocol architecture.
+\* large shared datasets
+
+\* frequent read-heavy workloads
+
+\* distributed AI agents
+
+\* global data access
+
+
+
+This prototype evaluates whether a global object storage model could simplify infrastructure for AI pipelines.
+
+
+
+---
 
 
 
@@ -56,11 +144,27 @@ Inspired by Shelby Protocol architecture.
 
 
 
-\- API server for AI retrieval
+\* Shelby storage integration
 
-\- Shelby storage integration
+\* AI retrieval API improvements
 
-\- RAG benchmarking
+\* RAG pipeline benchmarking
 
-\- Multi dataset support
+\* Multi-dataset support
+
+\* Distributed AI agent simulation
+
+
+
+---
+
+
+
+\## Status
+
+
+
+Experimental prototype built to explore AI + decentralized storage infrastructure concepts inspired by the Shelby protocol architecture.
+
+
 
