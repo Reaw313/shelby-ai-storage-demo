@@ -40,17 +40,47 @@ This project simulates how AI agents access shared datasets stored in a global o
 
 
 
-Dataset → Embedding → Vector Index → Retrieval → RAG → AI Agent
+Dataset
 
+↓
 
+Embedding Generation
 
-In this prototype, datasets are processed into embeddings and indexed for similarity search.
+↓
 
-AI agents query the system, retrieve relevant data, and feed it into a RAG pipeline to generate responses.
+Vector Search
 
+↓
 
+RAG Retrieval
+
+↓
+
+AI Agent
+
+↓
+
+Dataset Router
+
+↓
+
+Storage Layer (Shelby compatible)
 
 ---
+
+## Dataset Routing
+
+
+
+The system includes a simple dataset router that allows AI agents
+
+to select the most relevant dataset before performing retrieval.
+
+
+
+This simulates how AI workloads may interact with distributed
+
+storage systems where datasets are stored across multiple locations.
 
 
 
